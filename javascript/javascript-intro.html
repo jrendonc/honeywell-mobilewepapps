@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<script type="text/javascript">
+
+	//Constructor
+
+	function persona (nombre, edad, ocupacion, sexo) {
+		this.nombre = nombre;
+		this.edad = edad;
+		this.ocupacion = ocupacion;
+		this.sexo = sexo;
+		this.añospararetiro =  obtenerRetiro;
+	}
+
+	//Crear un método que regresa un valor, es una función
+
+	function obtenerRetiro () {
+		var añosretiro = 50 - this.edad;
+		return añosretiro;
+	}	
+
+	//Instanciar un un objeto desde el constructor, hay que usar new
+
+	var berny = new persona ("bernardo soriano", 24,  "ingeniero", "masculino");
+	var erika = new persona ("erika rios", 30, "vendedora", "femenino");
+
+	//Inicializar un objeto, hay que usar corchetes
+
+	var gaby = {nombre:"gabriela velázquez", edad:17, ocupacion:"estudiante", sexo: "femenino"}
+
+	//Array1 declarando los elementos, al crear un array se debe usar new
+
+	var personas = new Array ("berny", "erika", "gaby", "abraham");
+
+	//Array2 declarando el total de elementos
+
+	var buceo = new Array (4);
+
+	buceo[0] = "aletas buceo";
+	buceo[1] = "snorkel";
+	buceo[2] = "tanque de buceo";
+
+	//Array 3 abierto
+
+	var estados = new Array ();
+
+	estados[0] = "Oaxaca";
+	estados[1] = "Guadalajara";
+	estados[2] = "Quintanna Roo";
+
+	//Otro Array de 3 abierto
+
+	var capitales = new Array ();
+
+	capitales[0] = "Oaxaca";
+	capitales[1] = "Jalisco";
+	capitales[2] = "Chetumal";
+
+	//Concatenar Arrays
+
+	var lugaresMex = estados.concat(capitales);
+
+	//Convertir un objeto a Array
+
+	var personasString = personas.join( " + " );
+
+
+</script>
+
+	
+</head>
+<body>
+
+<script type="text/javascript">
+
+	/*/Escribe las propiedades de un objeto
+	document.write(erika.nombre +  " " + erika.edad + " " + erika.sexo + " " + erika.añospararetiro() + " años para retirarse");
+
+	//Del Array1 escribe la tercera persona
+	document.write ("<br>Persona número: "+ personas[3]);
+
+	document.write ("<br>Artículo de buceo: " + buceo[2]);
+
+	//Del Array3 imprimir todos los elementos
+	for (i=0; i<estados.length ; i++) {
+		document.write("<br>Estado: " + estados[i]);
+	}
+
+	//Imprimir Arrays concatenados
+	for (a=0 ; a<lugaresMex.length; a++) {
+		document.write("<br>Lugares de México: " + lugaresMex[a]);
+	}
+
+	//Imprimir la conversion de personas a personasString
+
+	document.write("<br>Personas convertido en string es: " + personasString);
+
+	
+	document.write("<br>El array personas es: " + personas);
+	
+	//Expulsar un elemento del Array con pop*/
+	
+	personas.pop();
+	document.write("<br>Expulsando el último elemento de personas el array queda: " + personas);
+
+	//Insertar un elemento al Array personas con push
+
+	personas.push("katie", "lindsay");
+	document.write("<br>El nuevo array de personas insertando dos mas con push: " + personas);
+
+	//Imprimiendo el array de personas al revés
+
+	personas.reverse();	
+	document.write ("<br>El array de personas al revés es: " + personas);
+
+	//Orden alfabético
+	personas.sort()
+	document.write ("<br>El array en orden alfabético es: " + personas);
+
+	//Usando el prompt
+	var miNombre = prompt("Introduce tu nombre: ", "");
+	document.write("<br>Hola, tu nombre es: " + miNombre)
+
+	//Introduce tres valores a través del prompt en un array abierto
+
+	var varPrompt = new Array ();
+
+	for (i=0;i<3;i++) {
+		varPrompt[i] = prompt ("Añade algo al array: ", "")
+	}
+	document.write("<br>Contenido del array: " + varPrompt);
+
+	/*/Reloj
+
+	function imprimeHora () {
+		var ahora = new Date ();
+		var horas = ahora.getHours();
+		var minutos = ahora.getMinutes();
+		var segundos = ahora.getSeconds();
+		document.write("<br>" + horas + ":" + minutos + ":" + segundos);
+	}
+
+	setInterval ("imprimeHora()",1000);*/
+
+	 
+
+</script>
+	
+</body>
+</html>
